@@ -1,0 +1,367 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>
+   TrusQualBooks Contact
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+    }
+    /* Fade in and slide up animation */
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Fade in animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    .fade-slide-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation-fill-mode: forwards;
+      animation-name: fadeSlideUp;
+      animation-duration: 0.8s;
+      animation-timing-function: ease;
+    }
+    .fade-in {
+      opacity: 0;
+      animation-fill-mode: forwards;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+    }
+    /* Delay classes */
+    .fade-slide-up-delay-1 {
+      animation-delay: 0.3s;
+    }
+    .fade-slide-up-delay-2 {
+      animation-delay: 0.6s;
+    }
+    .fade-slide-up-delay-3 {
+      animation-delay: 0.9s;
+    }
+    .fade-in-delay-1 {
+      animation-delay: 0.5s;
+    }
+
+    /* Scroll animation helper */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+ </head>
+<body class="bg-white text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-[#F9FAFB] border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center space-x-3">
+          <div class="bg-[#050816] rounded-md p-2">
+            <i class="fas fa-calculator text-white text-lg"></i>
+          </div>
+          <span class="text-[#050816] text-base font-normal select-none">TrusQualBooks</span>
+        </div>
+        <div class="hidden md:flex space-x-10 text-[#050816] text-sm font-normal">
+          <a href="index.html" class="border-b-2 border-[#050816] pb-1">Home</a>
+          <a href="about1.html" class="hover:border-b-2 hover:border-[#050816] pb-1">About Us</a>
+          <a href="services1.html" class="hover:border-b-2 hover:border-[#050816] pb-1">Services</a>
+          <a href="blogs.html" class="hover:border-b-2 hover:border-[#050816] pb-1">Blog</a>
+          <a href="contact1.html" class="hover:border-b-2 hover:border-[#050816] pb-1">Contact</a>
+        </div>
+        <button class="hidden md:block bg-[#050816] text-white text-sm font-semibold px-5 py-2 rounded-md hover:brightness-110 transition">
+          Get Free Consultation
+        </button>
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden text-[#050816] focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#F9FAFB] border-t border-gray-200">
+      <a href="index.html" class="block px-4 py-3 border-b border-gray-200 text-[#050816] text-sm font-normal">Home</a>
+      <a href="about1.html" class="block px-4 py-3 border-b border-gray-200 text-[#050816] text-sm font-normal">About Us</a>
+      <a href="services1.html" class="block px-4 py-3 border-b border-gray-200 text-[#050816] text-sm font-normal">Services</a>
+      <a href="blogs.html" class="block px-4 py-3 border-b border-gray-200 text-[#050816] text-sm font-normal">Blog</a>
+      <a href="contact1.html" class="block px-4 py-3 text-[#050816] text-sm font-normal">Contact</a>
+      <div class="px-4 py-4">
+        <button class="w-full bg-[#050816] text-white text-sm font-semibold px-5 py-2 rounded-md hover:brightness-110 transition">
+          Get Free Consultation
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dark horizontal bar below navbar -->
+  <div class="bg-gradient-to-r from-[#0B0D1B] via-[#0B0D1B] to-[#1a1c2e] h-6"></div>
+
+  <main class="max-w-7xl mx-auto px-6 py-16 flex flex-col-reverse lg:flex-row items-center lg:items-start gap-12">
+   <section class="max-w-xl text-left animate-on-scroll" data-anim-delay="0.3">
+    <h1 class="text-4xl font-extrabold text-black leading-tight mb-4">
+     Contact
+     <span class="text-[#1a2a7a]">
+      Our Team
+     </span>
+    </h1>
+    <p class="text-gray-600 text-base mb-10 max-w-md">
+     Ready to take control of your finances? Get in touch with our
+        experienced CPA team for personalized solutions and expert guidance.
+    </p>
+    <ul class="space-y-5 max-w-md">
+     <li class="flex items-center space-x-3">
+      <div class="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 text-gray-800">
+       <i class="fas fa-calendar-alt text-base">
+       </i>
+      </div>
+      <span class="text-sm text-black">
+       Free initial consultation
+      </span>
+     </li>
+     <li class="flex items-center space-x-3">
+      <div class="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 text-gray-800">
+       <i class="far fa-comment-alt text-base">
+       </i>
+      </div>
+      <span class="text-sm text-black">
+       24-hour response guarantee
+      </span>
+     </li>
+     <li class="flex items-center space-x-3">
+      <div class="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 text-gray-800">
+       <i class="fas fa-building text-base">
+       </i>
+      </div>
+      <span class="text-sm text-black">
+       Serving clients nationwide
+      </span>
+     </li>
+    </ul>
+   </section>
+   <section class="relative animate-on-scroll" data-anim-delay="0.4">
+    <img alt="Four business professionals in suits reviewing documents at a table" class="rounded-xl shadow-lg max-w-full h-auto max-h-[300px] sm:max-h-[400px]" height="300" src="https://storage.googleapis.com/a1aa/image/1a71b50a-059a-42f0-95cb-2b35b878eb77.jpg" width="450"/>
+   </section>
+  </main>
+
+   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
+   <h1 class="text-center text-2xl sm:text-3xl font-extrabold mb-2 select-none animate-on-scroll" data-anim-delay="0.1">
+    Frequently Asked Questions
+   </h1>
+   <p class="text-center text-gray-600 text-sm sm:text-base mb-12 select-none animate-on-scroll" data-anim-delay="0.3">
+    Quick answers to common questions about our services and processes
+   </p>
+   <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    <div class="bg-white rounded-lg p-6 shadow-sm animate-on-scroll" data-anim-delay="0.4">
+     <p class="font-semibold text-gray-900 mb-2 select-text">
+      How quickly can you prepare my tax return?
+     </p>
+     <p class="text-gray-600 text-sm leading-relaxed select-text">
+      Most individual tax returns are completed within 3-5 business days. Complex returns may take 7-10 days.
+     </p>
+    </div>
+    <div class="bg-white rounded-lg p-6 shadow-sm animate-on-scroll" data-anim-delay="0.5">
+     <p class="font-semibold text-gray-900 mb-2 select-text">
+      Do you offer year-round support?
+     </p>
+     <p class="text-gray-600 text-sm leading-relaxed select-text">
+      Yes, we provide comprehensive accounting and financial services throughout the year, not just during tax season.
+     </p>
+    </div>
+    <div class="bg-white rounded-lg p-6 shadow-sm animate-on-scroll" data-anim-delay="0.6">
+     <p class="font-semibold text-gray-900 mb-2 select-text">
+      What are your fees for services?
+     </p>
+     <p class="text-gray-600 text-sm leading-relaxed select-text">
+      Our fees vary based on complexity and services needed. We provide transparent pricing during your free consultation.
+     </p>
+    </div>
+    <div class="bg-white rounded-lg p-6 shadow-sm animate-on-scroll" data-anim-delay="0.7">
+     <p class="font-semibold text-gray-900 mb-2 select-text">
+      Can you help with IRS audits?
+     </p>
+     <p class="text-gray-600 text-sm leading-relaxed select-text">
+      Absolutely. We provide full IRS representation and audit support services to protect your interests.
+     </p>
+    </div>
+   </div>
+  </main>
+    <!--footer--->
+
+   <!-- Footer main -->
+  <footer class="bg-[#030313] border-t border-[#1a1c2a]">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+      <div class="space-y-4 animate-on-scroll" data-anim-delay="0.1">
+        <div
+          class="bg-white rounded-md p-2 inline-flex items-center justify-center"
+          style="width: 36px; height: 36px;"
+        >
+          <i class="fas fa-calculator text-[#030313] text-lg"></i>
+        </div>
+        <p class="font-semibold text-white text-base">TrusQualBooks</p>
+        <p class="text-sm font-normal text-white max-w-xs">
+          Your trusted CPA partner providing comprehensive accounting, tax,
+          and financial consulting services to help businesses and individuals
+          achieve their financial goals.
+        </p>
+        <ul class="space-y-2 text-xs font-normal text-white max-w-xs">
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-map-marker-alt text-white text-xs"></i>
+            <span>123 Financial District, New York, NY 10004</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-phone-alt text-white text-xs"></i>
+            <span>(555) 123-4567</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-envelope text-white text-xs"></i>
+            <span>info@procpasolutions.com</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-clock text-white text-xs"></i>
+            <span>Mon-Fri: 8AM-6PM, Sat: 9AM-2PM</span>
+          </li>
+        </ul>
+        <div class="flex space-x-4 mt-4">
+          <div class="bg-white rounded-md w-9 h-9"></div>
+          <div class="bg-white rounded-md w-9 h-9"></div>
+          <div class="bg-white rounded-md w-9 h-9"></div>
+          <div class="bg-white rounded-md w-9 h-9"></div>
+        </div>
+      </div>
+
+      <div class="animate-on-scroll" data-anim-delay="0.2">
+        <p class="font-semibold text-white mb-4">Services</p>
+        <ul class="text-xs font-normal text-white space-y-2 max-w-xs">
+          <li>Tax Preparation</li>
+          <li>Accounting &amp; Bookkeeping</li>
+          <li>Financial Planning</li>
+          <li>Business Consulting</li>
+          <li>Payroll Services</li>
+        </ul>
+      </div>
+
+      <div class="animate-on-scroll" data-anim-delay="0.3">
+        <p class="font-semibold text-white mb-4">Company</p>
+        <ul class="text-xs font-normal text-white space-y-2 max-w-xs">
+          <li> <a href="index.html">Home</a></li>
+    <li><a href="about1.html">About Us</a></li>
+    <li> <a href="services1.html">Services</a></li>
+    <li><a href="blogs.html">Blog</a></li>
+    <li> <a href="#">Contact</a></li>
+
+        </ul>
+      </div>
+
+      <div class="animate-on-scroll" data-anim-delay="0.4">
+        <p class="font-semibold text-white mb-4">Resources</p>
+        <ul class="text-xs font-normal text-white space-y-2 max-w-xs">
+          <li>Blog</li>
+          <li>Tax Calendar</li>
+          <li>Financial Tools</li>
+          <li>Document Center</li>
+          <li>FAQ</li>
+        </ul>
+      </div>
+    <div class="border-t border-[#1a1c2a] max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6 animate-on-scroll" data-anim-delay="0.6">
+      <div class="max-w-lg">
+        <p class="font-semibold text-white text-sm mb-1">Stay Updated</p>
+        <p class="text-xs font-normal text-white max-w-xs">
+          Get the latest tax tips and financial insights delivered to your inbox
+        </p>
+      </div>
+      <form class="flex w-full max-w-md gap-3">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="flex-grow bg-[#1a1c2a] rounded-md px-4 py-2 text-xs text-white placeholder:text-white/60 focus:outline-none"
+          required
+        />
+        <button
+          type="submit"
+          class="bg-white text-[#030313] font-semibold text-xs rounded-md px-4 py-2 flex items-center space-x-2"
+        >
+          <i class="fas fa-paper-plane"></i>
+          <span>Subscribe</span>
+        </button>
+      </form>
+    </div>
+
+    <div
+      class="border-t border-[#1a1c2a] max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between text-xs text-white font-normal animate-on-scroll"
+      data-anim-delay="0.7"
+    >
+      <p>© 2024 TrusQualBooks. All rights reserved.</p>
+      <div class="flex space-x-4 mt-2 md:mt-0">
+        <p>Privacy Policy</p>
+        <p>•</p>
+        <p>Terms of Service</p>
+        <p>•</p>
+        <p>Cookie Policy</p>
+      </div>
+      <div class="flex space-x-4 mt-2 md:mt-0">
+        <p>Licensed CPA Firm</p>
+        <p>•</p>
+        <p>AICPA Member</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for scroll animations
+    document.addEventListener("DOMContentLoaded", function () {
+      const animatedElements = document.querySelectorAll(".animate-on-scroll");
+      const observerOptions = {
+        threshold: 0.1,
+      };
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.getAttribute("data-anim-delay");
+            if (delay) {
+              entry.target.style.transitionDelay = delay + "s";
+            }
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      animatedElements.forEach((el) => {
+        observer.observe(el);
+      });
+    });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(mobileMenuButton && mobileMenu){
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+ </body>
+</html>

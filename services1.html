@@ -1,0 +1,637 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>TrusQualBooks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+    }
+    /* Fade in and slide up animation */
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Fade in animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    .fade-slide-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation-fill-mode: forwards;
+      animation-name: fadeSlideUp;
+      animation-duration: 0.8s;
+      animation-timing-function: ease;
+    }
+    .fade-in {
+      opacity: 0;
+      animation-fill-mode: forwards;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+    }
+    /* Delay classes */
+    .fade-slide-up-delay-1 {
+      animation-delay: 0.3s;
+    }
+    .fade-slide-up-delay-2 {
+      animation-delay: 0.6s;
+    }
+    .fade-slide-up-delay-3 {
+      animation-delay: 0.9s;
+    }
+    .fade-in-delay-1 {
+      animation-delay: 0.5s;
+    }
+
+    /* Scroll animation helper */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-[#F9FAFB] border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center space-x-3">
+          <div class="bg-[#050816] rounded-md p-2">
+            <i class="fas fa-calculator text-white text-lg"></i>
+          </div>
+          <span class="text-[#050816] text-base font-normal select-none">TrusQualBooks</span>
+        </div>
+        <div class="hidden md:flex space-x-10 text-[#050816] text-sm font-normal">
+          <a href="index.html" class="border-b-2 border-[#050816] pb-1">Home</a>
+          <a href="about1.html" class="hover:border-b-2 hover:border-[#050816] pb-1">About Us</a>
+          <a href="services1.html" class="hover:border-b-2 hover:border-[#050816] pb-1">Services</a>
+          <a href="blogs.html" class="hover:border-b-2 hover:border-[#050816] pb-1">Blog</a>
+          <a href="contact1.html" class="hover:border-b-2 hover:border-[#050816] pb-1">Contact</a>
+        </div>
+        <button class="hidden md:block bg-[#050816] text-white text-sm font-semibold px-5 py-2 rounded-md hover:brightness-110 transition">
+          Get Free Consultation
+        </button>
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden text-[#050816] focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#F9FAFB] border-t border-gray-200">
+      <a href="index.html" class="block px-4 py-3 border-b border-gray-200 text-[#050816] text-sm font-normal">Home</a>
+      <a href="about1.html" class="block px-4 py-3 border-b border-gray-200 text-[#050816] text-sm font-normal">About Us</a>
+      <a href="services1.html" class="block px-4 py-3 border-b border-gray-200 text-[#050816] text-sm font-normal">Services</a>
+      <a href="blogs.html" class="block px-4 py-3 border-b border-gray-200 text-[#050816] text-sm font-normal">Blog</a>
+      <a href="contact1.html" class="block px-4 py-3 text-[#050816] text-sm font-normal">Contact</a>
+      <div class="px-4 py-4">
+        <button class="w-full bg-[#050816] text-white text-sm font-semibold px-5 py-2 rounded-md hover:brightness-110 transition">
+          Get Free Consultation
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dark horizontal bar below navbar -->
+  <div class="bg-gradient-to-r from-[#0B0D1B] via-[#0B0D1B] to-[#1a1c2e] h-6"></div>
+
+  <!-- Hero Section -->
+  <section class="bg-[#0B1120] text-white py-20 relative">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <div class="inline-block bg-[#2563EB] rounded-md px-4 py-2 text-xs font-semibold mb-6 animate-on-scroll" data-anim-delay="0.3">
+        Professional Services
+      </div>
+      <h1 class="text-4xl font-extrabold mb-4 leading-tight animate-on-scroll" data-anim-delay="0.6">
+        Comprehensive Financial Services
+      </h1>
+      <p class="text-gray-300 max-w-3xl mx-auto mb-10 text-base font-normal animate-on-scroll" data-anim-delay="0.9">
+        From tax preparation to strategic business advisory, TrusQualBooks provides the expertise and personalized service your business needs to thrive.
+      </p>
+      <button
+        class="bg-[#2563EB] rounded-md px-6 py-3 font-semibold text-base inline-flex items-center space-x-2 animate-on-scroll"
+        type="button"
+        data-anim-delay="1.2"
+      >
+        <span>Schedule Consultation</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 relative grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Card 1 -->
+    <section
+      class="border border-gray-200 rounded-lg p-6 flex flex-col space-y-4 animate-on-scroll"
+      aria-labelledby="indiv-tax-prep"
+      data-anim-delay="0.1"
+    >
+      <div class="flex items-center space-x-4">
+        <div
+          class="bg-blue-200 text-blue-900 rounded-md p-3 flex items-center justify-center"
+          style="width: 40px; height: 40px;"
+        >
+          <i class="far fa-file-alt text-lg"></i>
+        </div>
+        <h2
+          id="indiv-tax-prep"
+          class="text-gray-900 font-semibold text-sm md:text-base"
+        >
+          Individual Tax Preparation
+        </h2>
+      </div>
+      <span
+        class="inline-block bg-gray-200 text-gray-800 text-xs font-semibold rounded-md px-2 py-0.5 select-none"
+        >Starting at $299</span
+      >
+      <p class="text-gray-600 text-sm md:text-base max-w-xl">
+        Complete preparation of federal and state tax returns for individuals
+        and families.
+      </p>
+      <p class="font-semibold text-gray-900 text-sm md:text-base">Includes:</p>
+      <ul class="text-gray-600 text-xs md:text-sm space-y-1 max-w-xs">
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Form 1040 Preparation</span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>State Tax Returns</span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Tax Planning Strategies</span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>IRS Communication</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Card 2 -->
+    <section
+      class="border border-gray-200 rounded-lg p-6 flex flex-col space-y-4 animate-on-scroll"
+      aria-labelledby="business-tax-services"
+      data-anim-delay="0.3"
+    >
+      <div class="flex items-center space-x-4">
+        <div
+          class="bg-blue-200 text-blue-900 rounded-md p-3 flex items-center justify-center"
+          style="width: 40px; height: 40px;"
+        >
+          <i class="fas fa-building text-lg"></i>
+        </div>
+        <h2
+          id="business-tax-services"
+          class="text-gray-900 font-semibold text-sm md:text-base"
+        >
+          Business Tax Services
+        </h2>
+      </div>
+      <span
+        class="inline-block bg-gray-200 text-gray-800 text-xs font-semibold rounded-md px-2 py-0.5 select-none"
+        >Starting at $899</span
+      >
+      <p class="text-gray-600 text-sm md:text-base max-w-xl">
+        Comprehensive tax services for corporations, partnerships, and LLCs.
+      </p>
+      <p class="font-semibold text-gray-900 text-sm md:text-base">Includes:</p>
+      <ul class="text-gray-600 text-xs md:text-sm space-y-1 max-w-xs">
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Corporate Returns</span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Partnership Returns</span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Multi-State Filing</span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Tax Compliance</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Card 3 -->
+    <section
+      class="border border-gray-200 rounded-lg p-6 flex flex-col space-y-4 animate-on-scroll"
+      aria-labelledby="tax-planning-strategy"
+      data-anim-delay="0.5"
+    >
+      <div class="flex items-center space-x-4">
+        <div
+          class="bg-blue-200 text-blue-900 rounded-md p-3 flex items-center justify-center"
+          style="width: 40px; height: 40px;"
+        >
+          <i class="fas fa-shield-alt text-lg"></i>
+        </div>
+        <h2
+          id="tax-planning-strategy"
+          class="text-gray-900 font-semibold text-sm md:text-base"
+        >
+          Tax Planning &amp; Strategy
+        </h2>
+      </div>
+      <span
+        class="inline-block bg-gray-200 text-gray-800 text-xs font-semibold rounded-md px-2 py-0.5 select-none"
+        >Custom Pricing</span
+      >
+      <p class="text-gray-600 text-sm md:text-base max-w-xl">
+        Proactive tax planning to minimize liability and maximize savings.
+      </p>
+      <p class="font-semibold text-gray-900 text-sm md:text-base">Includes:</p>
+      <ul class="text-gray-600 text-xs md:text-sm space-y-1 max-w-xs">
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Year-Round Planning</span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Tax Projections</span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Strategy Development</span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Compliance Review</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Card 4 -->
+    <section
+      class="border border-gray-200 rounded-lg p-6 flex flex-col space-y-4 animate-on-scroll"
+      aria-labelledby="irs-representation"
+      data-anim-delay="0.7"
+    >
+      <div class="flex items-center space-x-4">
+        <div
+          class="bg-blue-200 text-blue-900 rounded-md p-3 flex items-center justify-center"
+          style="width: 40px; height: 40px;"
+        >
+          <i class="fas fa-user-friends text-lg"></i>
+        </div>
+        <h2
+          id="irs-representation"
+          class="text-gray-900 font-semibold text-sm md:text-base"
+        >
+          IRS Representation
+        </h2>
+      </div>
+      <span
+        class="inline-block bg-gray-200 text-gray-800 text-xs font-semibold rounded-md px-2 py-0.5 select-none"
+        >Hourly Rates Apply</span
+      >
+      <p class="text-gray-600 text-sm md:text-base max-w-xl">
+        Professional representation for audits, appeals, and IRS communications.
+      </p>
+      <p class="font-semibold text-gray-900 text-sm md:text-base">Includes:</p>
+      <ul class="text-gray-600 text-xs md:text-sm space-y-1 max-w-xs">
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Audit Defense</span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Appeal Representation</span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Payment Plans</span>
+        </li>
+        <li class="flex items-center space-x-2">
+          <i class="fas fa-check-circle text-green-500"></i>
+          <span>Penalty Abatement</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 relative">
+   <section class="text-center max-w-3xl mx-auto mb-12 px-4">
+    <h2 class="text-[#050816] font-extrabold text-2xl sm:text-3xl animate-on-scroll" data-anim-delay="0.1">
+     Industry Experience
+    </h2>
+    <p class="text-[#475569] mt-3 text-sm sm:text-base font-normal leading-relaxed animate-on-scroll" data-anim-delay="0.3">
+     We serve clients across diverse industries with specialized expertise
+        and industry-specific knowledge
+    </p>
+   </section>
+   <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div class="bg-white rounded-lg p-6 flex flex-col items-center text-center shadow-sm animate-on-scroll" data-anim-delay="0.4">
+     <img alt="Hospital building emoji representing Healthcare industry" class="mb-4" decoding="async" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/a9ec6c4d-2364-4970-b1fb-f286e976a57e.jpg" width="40"/>
+     <h3 class="font-semibold text-base text-[#050816] mb-1">
+      Healthcare
+     </h3>
+     <p class="text-[#475569] text-sm">
+      <span class="font-semibold">
+       180
+      </span>
+      active clients
+     </p>
+    </div>
+    <div class="bg-white rounded-lg p-6 flex flex-col items-center text-center shadow-sm animate-on-scroll" data-anim-delay="0.5">
+     <img alt="Laptop emoji representing Technology industry" class="mb-4" decoding="async" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/25cb276b-88c8-4785-078c-5bb72b06b410.jpg" width="40"/>
+     <h3 class="font-semibold text-base text-[#050816] mb-1">
+      Technology
+     </h3>
+     <p class="text-[#475569] text-sm">
+      <span class="font-semibold">
+       220
+      </span>
+      active clients
+     </p>
+    </div>
+    <div class="bg-white rounded-lg p-6 flex flex-col items-center text-center shadow-sm animate-on-scroll" data-anim-delay="0.6">
+     <img alt="Factory building emoji representing Manufacturing industry" class="mb-4" decoding="async" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/128f294c-bc3c-48e4-7764-2cd904a6d711.jpg" width="40"/>
+     <h3 class="font-semibold text-base text-[#050816] mb-1">
+      Manufacturing
+     </h3>
+     <p class="text-[#475569] text-sm">
+      <span class="font-semibold">
+       150
+      </span>
+      active clients
+     </p>
+    </div>
+    <div class="bg-white rounded-lg p-6 flex flex-col items-center text-center shadow-sm animate-on-scroll" data-anim-delay="0.7">
+     <img alt="Office building emoji representing Real Estate industry" class="mb-4" decoding="async" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/338256b7-653b-4c43-6882-96852c2e1853.jpg" width="40"/>
+     <h3 class="font-semibold text-base text-[#050816] mb-1">
+      Real Estate
+     </h3>
+     <p class="text-[#475569] text-sm">
+      <span class="font-semibold">
+       190
+      </span>
+      active clients
+     </p>
+    </div>
+    <div class="bg-white rounded-lg p-6 flex flex-col items-center text-center shadow-sm animate-on-scroll" data-anim-delay="0.8">
+     <img alt="Scales of justice emoji representing Professional Services industry" class="mb-4" decoding="async" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/00ab0c0d-fe48-432f-6a5d-06c93b8bdff8.jpg" width="40"/>
+     <h3 class="font-semibold text-base text-[#050816] mb-1">
+      Professional Services
+     </h3>
+     <p class="text-[#475569] text-sm">
+      <span class="font-semibold">
+       160
+      </span>
+      active clients
+     </p>
+    </div>
+    <div class="bg-white rounded-lg p-6 flex flex-col items-center text-center shadow-sm animate-on-scroll" data-anim-delay="0.9">
+     <img alt="Shopping bags emoji representing Retail industry" class="mb-4" decoding="async" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/d5478eac-23ae-42c9-2c16-479e43955bc9.jpg" width="40"/>
+     <h3 class="font-semibold text-base text-[#050816] mb-1">
+      Retail
+     </h3>
+     <p class="text-[#475569] text-sm">
+      <span class="font-semibold">
+       140
+      </span>
+      active clients
+     </p>
+    </div>
+   </section>
+  </main>
+
+  <!-- Why choose us -->
+  <section class="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 2xl:px-32 py-20">
+    <h2 class="text-center font-extrabold text-[28px] leading-[34px] mb-3 animate-on-scroll" data-anim-delay="0.1">
+      Why Choose TrusQualBooks?
+    </h2>
+    <p class="text-center text-[#4B5563] text-[16px] leading-[24px] max-w-xl mx-auto mb-16 animate-on-scroll" data-anim-delay="0.3">
+      We combine expertise, technology, and personalized service to deliver exceptional results
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6 max-w-5xl mx-auto text-center">
+      <div class="animate-on-scroll" data-anim-delay="0.4">
+        <div class="mx-auto mb-6 w-14 h-14 rounded-full bg-[#D7E4FF] flex items-center justify-center">
+          <i class="fas fa-award text-[#3B6AF5] text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-[16px] leading-[24px] mb-2">Certified Professionals</h3>
+        <p class="text-[#4B5563] text-[14px] leading-[20px] max-w-[180px] mx-auto">
+          All CPAs are licensed and maintain continuing education requirements.
+        </p>
+      </div>
+      <div class="animate-on-scroll" data-anim-delay="0.5">
+        <div class="mx-auto mb-6 w-14 h-14 rounded-full bg-[#D7E4FF] flex items-center justify-center">
+          <i class="far fa-clock text-[#3B6AF5] text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-[16px] leading-[24px] mb-2">Timely Service</h3>
+        <p class="text-[#4B5563] text-[14px] leading-[20px] max-w-[180px] mx-auto">
+          We meet all deadlines and provide responsive communication.
+        </p>
+      </div>
+      <div class="animate-on-scroll" data-anim-delay="0.6">
+        <div class="mx-auto mb-6 w-14 h-14 rounded-full bg-[#D7E4FF] flex items-center justify-center">
+          <i class="fas fa-shield-alt text-[#3B6AF5] text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-[16px] leading-[24px] mb-2">Confidential &amp; Secure</h3>
+        <p class="text-[#4B5563] text-[14px] leading-[20px] max-w-[180px] mx-auto">
+          Your financial information is protected with the highest security standards.
+        </p>
+      </div>
+      <div class="animate-on-scroll" data-anim-delay="0.7">
+        <div class="mx-auto mb-6 w-14 h-14 rounded-full bg-[#D7E4FF] flex items-center justify-center">
+          <i class="fas fa-dollar-sign text-[#3B6AF5] text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-[16px] leading-[24px] mb-2">Transparent Pricing</h3>
+        <p class="text-[#4B5563] text-[14px] leading-[20px] max-w-[180px] mx-auto">
+          Clear, upfront pricing with no hidden fees or surprise charges.
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <!--footer--->
+
+   <!-- Footer main -->
+  <footer class="bg-[#030313] border-t border-[#1a1c2a]">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+      <div class="space-y-4 animate-on-scroll" data-anim-delay="0.1">
+        <div
+          class="bg-white rounded-md p-2 inline-flex items-center justify-center"
+          style="width: 36px; height: 36px;"
+        >
+          <i class="fas fa-calculator text-[#030313] text-lg"></i>
+        </div>
+        <p class="font-semibold text-white text-base">TrusQualBooks</p>
+        <p class="text-sm font-normal text-white max-w-xs">
+          Your trusted CPA partner providing comprehensive accounting, tax,
+          and financial consulting services to help businesses and individuals
+          achieve their financial goals.
+        </p>
+        <ul class="space-y-2 text-xs font-normal text-white max-w-xs">
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-map-marker-alt text-white text-xs"></i>
+            <span>123 Financial District, New York, NY 10004</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-phone-alt text-white text-xs"></i>
+            <span>(555) 123-4567</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-envelope text-white text-xs"></i>
+            <span>info@procpasolutions.com</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-clock text-white text-xs"></i>
+            <span>Mon-Fri: 8AM-6PM, Sat: 9AM-2PM</span>
+          </li>
+        </ul>
+        <div class="flex space-x-4 mt-4">
+          <div class="bg-white rounded-md w-9 h-9"></div>
+          <div class="bg-white rounded-md w-9 h-9"></div>
+          <div class="bg-white rounded-md w-9 h-9"></div>
+          <div class="bg-white rounded-md w-9 h-9"></div>
+        </div>
+      </div>
+
+      <div class="animate-on-scroll" data-anim-delay="0.2">
+        <p class="font-semibold text-white mb-4">Services</p>
+        <ul class="text-xs font-normal text-white space-y-2 max-w-xs">
+          <li>Tax Preparation</li>
+          <li>Accounting &amp; Bookkeeping</li>
+          <li>Financial Planning</li>
+          <li>Business Consulting</li>
+          <li>Payroll Services</li>
+        </ul>
+      </div>
+
+      <div class="animate-on-scroll" data-anim-delay="0.3">
+        <p class="font-semibold text-white mb-4">Company</p>
+        <ul class="text-xs font-normal text-white space-y-2 max-w-xs">
+         <li> <a href="index.html">Home</a></li>
+    <li><a href="about1.html">About Us</a></li>
+    <li> <a href="#">Services</a></li>
+    <li><a href="blogs.html">Blog</a></li>
+    <li> <a href="contact1.html">Contact</a></li>
+
+        </ul>
+      </div>
+
+      <div class="animate-on-scroll" data-anim-delay="0.4">
+        <p class="font-semibold text-white mb-4">Resources</p>
+        <ul class="text-xs font-normal text-white space-y-2 max-w-xs">
+          <li>Blog</li>
+          <li>Tax Calendar</li>
+          <li>Financial Tools</li>
+          <li>Document Center</li>
+          <li>FAQ</li>
+        </ul>
+    </div>
+
+    <div class="border-t border-[#1a1c2a] max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6 animate-on-scroll" data-anim-delay="0.6">
+      <div class="max-w-lg">
+        <p class="font-semibold text-white text-sm mb-1">Stay Updated</p>
+        <p class="text-xs font-normal text-white max-w-xs">
+          Get the latest tax tips and financial insights delivered to your inbox
+        </p>
+      </div>
+      <form class="flex w-full max-w-md gap-3">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="flex-grow bg-[#1a1c2a] rounded-md px-4 py-2 text-xs text-white placeholder:text-white/60 focus:outline-none"
+          required
+        />
+        <button
+          type="submit"
+          class="bg-white text-[#030313] font-semibold text-xs rounded-md px-4 py-2 flex items-center space-x-2"
+        >
+          <i class="fas fa-paper-plane"></i>
+          <span>Subscribe</span>
+        </button>
+      </form>
+    </div>
+
+    <div
+      class="border-t border-[#1a1c2a] max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between text-xs text-white font-normal animate-on-scroll"
+      data-anim-delay="0.7"
+    >
+      <p>© 2024 TrusQualBooks. All rights reserved.</p>
+      <div class="flex space-x-4 mt-2 md:mt-0">
+        <p>Privacy Policy</p>
+        <p>•</p>
+        <p>Terms of Service</p>
+        <p>•</p>
+        <p>Cookie Policy</p>
+      </div>
+      <div class="flex space-x-4 mt-2 md:mt-0">
+        <p>Licensed CPA Firm</p>
+        <p>•</p>
+        <p>AICPA Member</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for scroll animations
+    document.addEventListener("DOMContentLoaded", function () {
+      const animatedElements = document.querySelectorAll(".animate-on-scroll");
+      const observerOptions = {
+        threshold: 0.1,
+      };
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.getAttribute("data-anim-delay");
+            if (delay) {
+              entry.target.style.transitionDelay = delay + "s";
+            }
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      animatedElements.forEach((el) => {
+        observer.observe(el);
+      });
+    });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(mobileMenuButton && mobileMenu){
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

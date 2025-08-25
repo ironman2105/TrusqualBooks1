@@ -1,0 +1,664 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>
+   TrusQualBooks Blog
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: "Inter", sans-serif;
+    }
+     /* Fade in and slide up animation */
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Fade in animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    .fade-slide-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation-fill-mode: forwards;
+      animation-name: fadeSlideUp;
+      animation-duration: 0.8s;
+      animation-timing-function: ease;
+    }
+    .fade-in {
+      opacity: 0;
+      animation-fill-mode: forwards;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+    }
+    /* Delay classes */
+    .fade-slide-up-delay-1 {
+      animation-delay: 0.3s;
+    }
+    .fade-slide-up-delay-2 {
+      animation-delay: 0.6s;
+    }
+    .fade-slide-up-delay-3 {
+      animation-delay: 0.9s;
+    }
+    .fade-in-delay-1 {
+      animation-delay: 0.5s;
+    }
+
+    /* Scroll animation helper */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Active filter button style */
+    .filter-button.active {
+      background-color: #050816;
+      color: white;
+      font-weight: 600;
+    }
+  </style>
+ </head>
+ <body class="bg-white text-gray-700">
+  <!-- Navbar -->
+  <nav class="bg-[#F9FAFB] border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center space-x-3">
+          <div class="bg-[#050816] rounded-md p-2">
+            <i class="fas fa-calculator text-white text-lg"></i>
+          </div>
+          <span class="text-[#050816] text-base font-normal select-none">TrusQualBooks</span>
+        </div>
+        <div class="hidden md:flex space-x-10 text-[#050816] text-sm font-normal">
+          <a href="index.html" class="border-b-2 border-[#050816] pb-1">Home</a>
+          <a href="about1.html" class="hover:border-b-2 hover:border-[#050816] pb-1">About Us</a>
+          <a href="services1.html" class="hover:border-b-2 hover:border-[#050816] pb-1">Services</a>
+          <a href="blogs.html" class="hover:border-b-2 hover:border-[#050816] pb-1">Blog</a>
+          <a href="contact1.html" class="hover:border-b-2 hover:border-[#050816] pb-1">Contact</a>
+        </div>
+        <button class="hidden md:block bg-[#050816] text-white text-sm font-semibold px-5 py-2 rounded-md hover:brightness-110 transition">
+          Get Free Consultation
+        </button>
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden text-[#050816] focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#F9FAFB] border-t border-gray-200">
+      <a href="index.html" class="block px-4 py-3 border-b border-gray-200 text-[#050816] text-sm font-normal">Home</a>
+      <a href="about1.html" class="block px-4 py-3 border-b border-gray-200 text-[#050816] text-sm font-normal">About Us</a>
+      <a href="services1.html" class="block px-4 py-3 border-b border-gray-200 text-[#050816] text-sm font-normal">Services</a>
+      <a href="blogs.html" class="block px-4 py-3 border-b border-gray-200 text-[#050816] text-sm font-normal">Blog</a>
+      <a href="contact1.html" class="block px-4 py-3 text-[#050816] text-sm font-normal">Contact</a>
+      <div class="px-4 py-4">
+        <button class="w-full bg-[#050816] text-white text-sm font-semibold px-5 py-2 rounded-md hover:brightness-110 transition">
+          Get Free Consultation
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dark horizontal bar below navbar -->
+  <div class="bg-gradient-to-r from-[#0B0D1B] via-[#0B0D1B] to-[#1a1c2e] h-6"></div>
+
+  <!-- Main content -->
+  <main class="max-w-7xl mx-auto px-6 mt-20 text-center">
+   <h1 class="text-4xl sm:text-5xl font-extrabold text-black max-w-4xl mx-auto">
+    Financial
+    <span class="text-[#2c3e9f]">
+     Insights
+    </span>
+   </h1>
+   <p class="mt-4 max-w-2xl mx-auto text-gray-500 text-base sm:text-lg leading-relaxed">
+    Stay informed with expert insights, tips, and updates from our CPA
+      professionals to help you make smarter financial decisions.
+   </p>
+  </main>
+
+    <!-- Filter bar -->
+    <section class="w-full border-b border-gray-200 bg-[#f9fafb] shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4 py-4">
+            <div class="flex flex-wrap gap-3 items-center">
+                <button class="filter-button active bg-[#050816] text-white text-xs font-semibold rounded-full px-4 py-2" type="button" data-filter="all" onclick="filterPosts(this)">
+                    All
+                </button>
+                <button class="filter-button bg-white border border-gray-300 text-gray-800 text-xs font-normal rounded-full px-4 py-2 hover:bg-gray-100" type="button" data-filter="Tax Planning" onclick="filterPosts(this)">
+                    Tax Planning
+                </button>
+                <button class="filter-button bg-white border border-gray-300 text-gray-800 text-xs font-normal rounded-full px-4 py-2 hover:bg-gray-100" type="button" data-filter="Bookkeeping" onclick="filterPosts(this)">
+                    Bookkeeping
+                </button>
+                <button class="filter-button bg-white border border-gray-300 text-gray-800 text-xs font-normal rounded-full px-4 py-2 hover:bg-gray-100" type="button" data-filter="Financial Planning" onclick="filterPosts(this)">
+                    Financial Planning
+                </button>
+                <button class="filter-button bg-white border border-gray-300 text-gray-800 text-xs font-normal rounded-full px-4 py-2 hover:bg-gray-100" type="button" data-filter="Business Consulting" onclick="filterPosts(this)">
+                    Business Consulting
+                </button>
+                <button class="filter-button bg-white border border-gray-300 text-gray-800 text-xs font-normal rounded-full px-4 py-2 hover:bg-gray-100" type="button" data-filter="Business Finance" onclick="filterPosts(this)">
+                    Business Finance
+                </button>
+                <button class="filter-button bg-white border border-gray-300 text-gray-800 text-xs font-normal rounded-full px-4 py-2 hover:bg-gray-100" type="button" data-filter="Retirement Planning" onclick="filterPosts(this)">
+                    Retirement Planning
+                </button>
+            </div>
+        </div>
+    </section>
+ <!-- Main content -->
+  <main class="max-w-7xl mx-auto px-6 py-10">
+  <h2 class="text-lg font-semibold mb-6">Featured Article</h2>
+  
+  <article class="flex flex-col md:flex-row bg-white border border-gray-100 rounded-lg overflow-hidden filter-item" data-category="Tax Planning">
+    
+    <!-- Image Section -->
+    <div class="relative w-full md:w-4/6 flex-shrink-0">
+      <img 
+        src="https://storage.googleapis.com/a1aa/image/45a636cd-4370-4936-dc1e-c452ce847633.jpg" 
+        alt="Yellow house with green window and plants in front under a cloudy sky"
+        class="w-full h-auto md:h-full object-cover"
+      />
+      <span class="absolute top-4 left-4 bg-[#050816] text-white text-xs font-semibold rounded-md px-3 py-1">
+        Tax Planning
+      </span>
+    </div>
+
+    <!-- Text Section -->
+    <div class="w-full md:w-2/3 p-6 flex flex-col justify-center">
+      <h3 class="text-xl font-bold leading-tight mb-4">
+        2024 Tax Law Changes: What You Need to Know
+      </h3>
+      <p class="text-gray-600 mb-6 leading-relaxed">
+        Stay ahead of the latest tax law changes and understand how they impact your personal and business finances for the 2024 tax year.
+      </p>
+      <div class="flex flex-wrap items-center text-gray-500 text-xs space-x-6 mb-6">
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-user"></i><span>Robert Anderson, CPA</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-calendar-alt"></i><span>January 15, 2024</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-clock"></i><span>8 min read</span>
+        </div>
+      </div>
+      <button class="bg-[#050816] text-white text-sm font-semibold rounded-md px-5 py-2 w-max hover:bg-[#0a0e23] transition flex items-center space-x-2">
+        <span>Read Article</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+
+  </article>
+</main>
+
+
+   <!-- Blog cards -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Card 1 -->
+    <article class="border border-gray-200 rounded-xl overflow-hidden shadow-sm filter-item" data-category="Bookkeeping">
+     <div class="relative">
+      <img alt="Desk with keyboard, ruler, papers and a label with text Finance" class="w-full h-48 object-cover rounded-t-xl" height="300" src="https://storage.googleapis.com/a1aa/image/f1e277d7-a6d3-4c77-d70f-333d6e159022.jpg" width="600"/>
+      <span class="absolute top-3 left-3 bg-[#050816] text-white text-[10px] font-semibold rounded px-2 py-1">
+       Bookkeeping
+      </span>
+     </div>
+     <div class="p-6">
+      <h3 class="text-[#050816] font-semibold text-lg leading-6 mb-2">
+       Small Business Bookkeeping Best Practices
+      </h3>
+      <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+       Essential bookkeeping practices every small business owner should implement to maintain accurate financial records and ensure...
+      </p>
+      <div class="flex flex-wrap gap-4 text-gray-400 text-xs">
+       <div class="flex items-center gap-2">
+        <i class="fas fa-user">
+        </i>
+        <span>
+         Jennifer Liu
+        </span>
+       </div>
+       <div class="flex items-center gap-2">
+        <i class="far fa-clock">
+        </i>
+        <span>
+         6 min read
+        </span>
+       </div>
+      </div>
+      <div class="flex items-center gap-2 text-gray-400 text-xs mt-3">
+       <i class="far fa-calendar-alt">
+       </i>
+       <span>
+        January 10, 2024
+       </span>
+      </div>
+     </div>
+    </article>
+    <!-- Card 2 -->
+    <article class="border border-gray-200 rounded-xl overflow-hidden shadow-sm filter-item" data-category="Financial Planning">
+     <div class="relative">
+      <img alt="Group of business people in suits discussing documents at table" class="w-full h-48 object-cover rounded-t-xl" height="300" src="https://storage.googleapis.com/a1aa/image/cfa6b4fe-7963-48c1-e8cc-e2be926fd34c.jpg" width="600"/>
+      <span class="absolute top-3 left-3 bg-[#050816] text-white text-[10px] font-semibold rounded px-2 py-1">
+       Financial Planning
+      </span>
+     </div>
+     <div class="p-6">
+      <h3 class="text-[#050816] font-semibold text-lg leading-6 mb-2">
+       Financial Planning Strategies for 2024
+      </h3>
+      <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+       Comprehensive financial planning strategies to help you achieve your long-term financial goals and secure your future.
+      </p>
+      <div class="flex flex-wrap gap-4 text-gray-400 text-xs">
+       <div class="flex items-center gap-2">
+        <i class="fas fa-user">
+        </i>
+        <span>
+         Michael Thompson
+        </span>
+       </div>
+       <div class="flex items-center gap-2">
+        <i class="far fa-clock">
+        </i>
+        <span>
+         10 min read
+        </span>
+       </div>
+      </div>
+      <div class="flex items-center gap-2 text-gray-400 text-xs mt-3">
+       <i class="far fa-calendar-alt">
+       </i>
+       <span>
+        January 5, 2024
+       </span>
+      </div>
+     </div>
+    </article>
+    <!-- Card 3 -->
+    <article class="border border-gray-200 rounded-xl overflow-hidden shadow-sm filter-item" data-category="Business Consulting">
+     <div class="relative">
+      <img alt="Smiling business people looking at laptop screen on light background" class="w-full h-48 object-cover rounded-t-xl" height="300" src="https://storage.googleapis.com/a1aa/image/d5d4f49a-b181-45c8-367c-9c30afb32523.jpg" width="600"/>
+      <span class="absolute top-3 left-3 bg-[#050816] text-white text-[10px] font-semibold rounded px-2 py-1">
+       Business Consulting
+      </span>
+     </div>
+     <div class="p-6">
+      <h3 class="text-[#050816] font-semibold text-lg leading-6 mb-2">
+       Understanding Business Entity Types
+      </h3>
+      <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+       A comprehensive guide to different business entity types and how to choose the right structure for your business.
+      </p>
+      <div class="flex flex-wrap gap-4 text-gray-400 text-xs">
+       <div class="flex items-center gap-2">
+        <i class="fas fa-user">
+        </i>
+        <span>
+         Robert Anderson
+        </span>
+       </div>
+       <div class="flex items-center gap-2">
+        <i class="far fa-clock">
+        </i>
+        <span>
+         7 min read
+        </span>
+       </div>
+      </div>
+      <div class="flex items-center gap-2 text-gray-400 text-xs mt-3">
+       <i class="far fa-calendar-alt">
+       </i>
+       <span>
+        December 28, 2023
+       </span>
+      </div>
+     </div>
+    </article>
+    <!--card 3-->
+     <article class="border border-gray-200 rounded-xl overflow-hidden shadow-sm filter-item" data-category="Bookkeeping">
+     <div class="relative">
+      <img alt="Desk with keyboard, ruler, papers and a label with text Finance" class="w-full h-48 object-cover rounded-t-xl" height="300" src="https://storage.googleapis.com/a1aa/image/f1e277d7-a6d3-4c77-d70f-333d6e159022.jpg" width="600"/>
+      <span class="absolute top-3 left-3 bg-[#050816] text-white text-[10px] font-semibold rounded px-2 py-1">
+       Bookkeeping
+      </span>
+     </div>
+     <div class="p-6">
+      <h3 class="text-[#050816] font-semibold text-lg leading-6 mb-2">
+       Small Business Bookkeeping Best Practices
+      </h3>
+      <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+       Essential bookkeeping practices every small business owner should implement to maintain accurate financial records and ensure...
+      </p>
+      <div class="flex flex-wrap gap-4 text-gray-400 text-xs">
+       <div class="flex items-center gap-2">
+        <i class="fas fa-user">
+        </i>
+        <span>
+         Jennifer Liu
+        </span>
+       </div>
+       <div class="flex items-center gap-2">
+        <i class="far fa-clock">
+        </i>
+        <span>
+         6 min read
+        </span>
+       </div>
+      </div>
+      <div class="flex items-center gap-2 text-gray-400 text-xs mt-3">
+       <i class="far fa-calendar-alt">
+       </i>
+       <span>
+        January 10, 2024
+       </span>
+      </div>
+     </div>
+    </article>
+    <!--card 4-->
+     <article class="border border-gray-200 rounded-xl overflow-hidden shadow-sm filter-item" data-category="Retirement Planning">
+     <div class="relative">
+      <img alt="Desk with keyboard, ruler, papers and a label with text Finance" class="w-full h-48 object-cover rounded-t-xl" height="300" src="https://storage.googleapis.com/a1aa/image/f1e277d7-a6d3-4c77-d70f-333d6e159022.jpg" width="600"/>
+      <span class="absolute top-3 left-3 bg-[#050816] text-white text-[10px] font-semibold rounded px-2 py-1">
+       Retirement Planning
+      </span>
+     </div>
+     <div class="p-6">
+      <h3 class="text-[#050816] font-semibold text-lg leading-6 mb-2">
+       Small Business Bookkeeping Best Practices
+      </h3>
+      <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+       Essential bookkeeping practices every small business owner should implement to maintain accurate financial records and ensure...
+      </p>
+      <div class="flex flex-wrap gap-4 text-gray-400 text-xs">
+       <div class="flex items-center gap-2">
+        <i class="fas fa-user">
+        </i>
+        <span>
+         Jennifer Liu
+        </span>
+       </div>
+       <div class="flex items-center gap-2">
+        <i class="far fa-clock">
+        </i>
+        <span>
+         6 min read
+        </span>
+       </div>
+      </div>
+      <div class="flex items-center gap-2 text-gray-400 text-xs mt-3">
+       <i class="far fa-calendar-alt">
+       </i>
+       <span>
+        January 10, 2024
+       </span>
+      </div>
+     </div>
+    </article>
+    <!--card 5-->
+     <article class="border border-gray-200 rounded-xl overflow-hidden shadow-sm filter-item" data-category="Retirement Planning">
+     <div class="relative">
+      <img alt="Desk with keyboard, ruler, papers and a label with text Finance" class="w-full h-48 object-cover rounded-t-xl" height="300" src="https://storage.googleapis.com/a1aa/image/f1e277d7-a6d3-4c77-d70f-333d6e159022.jpg" width="600"/>
+      <span class="absolute top-3 left-3 bg-[#050816] text-white text-[10px] font-semibold rounded px-2 py-1">
+       Retirement Planning
+      </span>
+     </div>
+     <div class="p-6">
+      <h3 class="text-[#050816] font-semibold text-lg leading-6 mb-2">
+       Small Business Bookkeeping Best Practices
+      </h3>
+      <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+       Essential bookkeeping practices every small business owner should implement to maintain accurate financial records and ensure...
+      </p>
+      <div class="flex flex-wrap gap-4 text-gray-400 text-xs">
+       <div class="flex items-center gap-2">
+        <i class="fas fa-user">
+        </i>
+        <span>
+         Jennifer Liu
+        </span>
+       </div>
+       <div class="flex items-center gap-2">
+        <i class="far fa-clock">
+        </i>
+        <span>
+         6 min read
+        </span>
+       </div>
+      </div>
+      <div class="flex items-center gap-2 text-gray-400 text-xs mt-3">
+       <i class="far fa-calendar-alt">
+       </i>
+       <span>
+        January 10, 2024
+       </span>
+      </div>
+     </div>
+    </article>
+   </div>
+  </main>
+
+       <!--footer--->
+
+   <!-- Footer main -->
+  <footer class="bg-[#030313] border-t border-[#1a1c2a]">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+      <div class="space-y-4 animate-on-scroll" data-anim-delay="0.1">
+        <div
+          class="bg-white rounded-md p-2 inline-flex items-center justify-center"
+          style="width: 36px; height: 36px;"
+        >
+          <i class="fas fa-calculator text-[#030313] text-lg"></i>
+        </div>
+        <p class="font-semibold text-white text-base">TrusQualBooks</p>
+        <p class="text-sm font-normal text-white max-w-xs">
+          Your trusted CPA partner providing comprehensive accounting, tax,
+          and financial consulting services to help businesses and individuals
+          achieve their financial goals.
+        </p>
+        <ul class="space-y-2 text-xs font-normal text-white max-w-xs">
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-map-marker-alt text-white text-xs"></i>
+            <span>123 Financial District, New York, NY 10004</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-phone-alt text-white text-xs"></i>
+            <span>(555) 123-4567</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-envelope text-white text-xs"></i>
+            <span>info@procpasolutions.com</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-clock text-white text-xs"></i>
+            <span>Mon-Fri: 8AM-6PM, Sat: 9AM-2PM</span>
+          </li>
+        </ul>
+        <div class="flex space-x-4 mt-4">
+          <div class="bg-white rounded-md w-9 h-9"></div>
+          <div class="bg-white rounded-md w-9 h-9"></div>
+          <div class="bg-white rounded-md w-9 h-9"></div>
+          <div class="bg-white rounded-md w-9 h-9"></div>
+        </div>
+      </div>
+
+      <div class="animate-on-scroll" data-anim-delay="0.2">
+        <p class="font-semibold text-white mb-4">Services</p>
+        <ul class="text-xs font-normal text-white space-y-2 max-w-xs">
+          <li>Tax Preparation</li>
+          <li>Accounting &amp; Bookkeeping</li>
+          <li>Financial Planning</li>
+          <li>Business Consulting</li>
+          <li>Payroll Services</li>
+        </ul>
+      </div>
+
+      <div class="animate-on-scroll" data-anim-delay="0.3">
+        <p class="font-semibold text-white mb-4">Company</p>
+        <ul class="text-xs font-normal text-white space-y-2 max-w-xs">
+          <li> <a href="index.html">
+     Home </a>
+    </li>
+    <li><a href="about1.html">
+     About Us </a>
+    </li>
+    <li> <a href="services1.html">
+     Services </a>
+    </li>
+    <li><a href="#">
+     Blog </a>
+    </li>
+    <li> <a href="contact1.html">
+     Contact </a>
+    </li>
+        </ul>
+      </div>
+
+      <div class="animate-on-scroll" data-anim-delay="0.4">
+        <p class="font-semibold text-white mb-4">Resources</p>
+        <ul class="text-xs font-normal text-white space-y-2 max-w-xs">
+          <li>Blog</li>
+          <li>Tax Calendar</li>
+          <li>Financial Tools</li>
+          <li>Document Center</li>
+          <li>FAQ</li>
+        </ul>
+      </div>
+
+    <div class="border-t border-[#1a1c2a] max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6 animate-on-scroll" data-anim-delay="0.6">
+      <div class="max-w-lg">
+        <p class="font-semibold text-white text-sm mb-1">Stay Updated</p>
+        <p class="text-xs font-normal text-white max-w-xs">
+          Get the latest tax tips and financial insights delivered to your inbox
+        </p>
+      </div>
+      <form class="flex w-full max-w-md gap-3">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="flex-grow bg-[#1a1c2a] rounded-md px-4 py-2 text-xs text-white placeholder:text-white/60 focus:outline-none"
+          required
+        />
+        <button
+          type="submit"
+          class="bg-white text-[#030313] font-semibold text-xs rounded-md px-4 py-2 flex items-center space-x-2"
+        >
+          <i class="fas fa-paper-plane"></i>
+          <span>Subscribe</span>
+        </button>
+      </form>
+    </div>
+
+    <div
+      class="border-t border-[#1a1c2a] max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between text-xs text-white font-normal animate-on-scroll"
+      data-anim-delay="0.7"
+    >
+      <p>© 2024 TrusQualBooks. All rights reserved.</p>
+      <div class="flex space-x-4 mt-2 md:mt-0">
+        <p>Privacy Policy</p>
+        <p>•</p>
+        <p>Terms of Service</p>
+        <p>•</p>
+        <p>Cookie Policy</p>
+      </div>
+      <div class="flex space-x-4 mt-2 md:mt-0">
+        <p>Licensed CPA Firm</p>
+        <p>•</p>
+        <p>AICPA Member</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function setActive(button) {
+      // Remove active class from all buttons
+      const buttons = document.querySelectorAll('.filter-button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      // Add active class to the clicked button
+      button.classList.add('active');
+      filterPosts(button);
+    }
+
+    function filterPosts(button) {
+      const filter = button.getAttribute('data-filter');
+      const posts = document.querySelectorAll('.filter-item');
+
+      posts.forEach(post => {
+        const categories = post.getAttribute('data-category').split(',').map(c => c.trim());
+        if (filter === 'all' || categories.includes(filter)) {
+          post.style.display = 'block';
+          post.classList.add('fade-slide-up', 'fade-slide-up-delay-1');
+          post.classList.remove('opacity-0');
+        } else {
+          post.style.display = 'none';
+          post.classList.remove('fade-slide-up', 'fade-slide-up-delay-1');
+          post.classList.add('opacity-0');
+        }
+      });
+    }
+
+    // Initialize filter on page load to show all posts
+    document.addEventListener('DOMContentLoaded', () => {
+      const allButton = document.querySelector('.filter-button[data-filter="all"]');
+      if (allButton) {
+        setActive(allButton);
+      }
+    });
+
+    // Intersection Observer for scroll animations
+    document.addEventListener("DOMContentLoaded", function () {
+      const animatedElements = document.querySelectorAll(".animate-on-scroll");
+      const observerOptions = {
+        threshold: 0.1,
+      };
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.getAttribute("data-anim-delay");
+            if (delay) {
+              entry.target.style.transitionDelay = delay + "s";
+            }
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      animatedElements.forEach((el) => {
+        observer.observe(el);
+      });
+    });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(mobileMenuButton && mobileMenu){
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+ </body>
+</html>
